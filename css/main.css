@@ -273,3 +273,13 @@ th, td {
 .table100.ver3 .ps__rail-y .ps__thumb-y::before {
   background-color: #00ad5f;
 }
+
+@media (max-width: 800px) {
+  h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+  }
+  .wrap-table100 {
+    width: 100%;
+    margin: 1em;
+  }
+}
