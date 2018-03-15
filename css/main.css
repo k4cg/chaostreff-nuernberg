@@ -19,6 +19,14 @@ a:hover {
   text-decoration: none;
 }
 
+.date-table  {
+  border-radius: 10px;
+}
+
+.date-table th {
+  border-top: 0px;
+}
+
 .date-table th {
   color: #00ad5f;
 }
