@@ -11,9 +11,10 @@ Das Skript setzt die Daten (erster Donnerstag bzw. dritter Dienstag) pro Monat, 
 
 ### appointments.csv
 
-location | year-month | appointment
-lab | 2019-06 | 11.06.2019
-k4cg | 2020-01 | 09.01.2020
+| location | year-month | appointment |
+| --- | --- | --- |
+| lab | 2019-06 | 11.06.2019 |
+| k4cg | 2020-01 | 09.01.2020 |
 
 #### location
 
