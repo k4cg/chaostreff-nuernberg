@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from dateutil.rrule import rrule, MONTHLY, TH, TU
+from dateutil.rrule import rrule, MONTHLY, TH, TU, MO
 from datetime import datetime, date
 
 
@@ -15,7 +15,7 @@ class Entry:
 
     def asHTML(self):
         template = '<tr><td>%s</td><td>%s</td><td>%s</td></tr>'
-        dateString = self.date.strftime('%Y-%m-%d')
+        dateString = self.date.strftime('%d.%m.%Y')
         return template % (dateString, self.location, self.time)
 
 
@@ -32,11 +32,11 @@ today = date.today()
 count = 5
 dates = []
 
-k4cg = list(rrule(MONTHLY, count=count, byweekday=TH(1), dtstart=today))
+k4cg = list(rrule(MONTHLY, count=count, byweekday=TH(1), dtstart=today, wkst=MO))
 for dateEntry in k4cg:
     dates.append(k4cgEntry(dateEntry))
 
-fablab = list(rrule(MONTHLY, count=count, byweekday=TU(3), dtstart=today))
+fablab = list(rrule(MONTHLY, count=count, byweekday=TU(3), dtstart=today, wkst=MO))
 for dateEntry in fablab:
     dates.append(fablabEntry(dateEntry))
 
