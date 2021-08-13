@@ -1,1 +1,2 @@
-dateutil
+icalendar
+recurring_ical_events
