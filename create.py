@@ -11,7 +11,7 @@ import shutil
 INPUT_FOLDER='static'
 OUTPUT_FOLDER='public'
 
-FABLAB_ACTIVE=True
+FABLAB_ACTIVE=False
 K4CG_ACTIVE=True
 NERDBERG_ACTIVE=True
 
