@@ -1,0 +1,42 @@
+body, html {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+a {
+  color: #0056B3;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.date-table  {
+  border-radius: 10px;
+}
+
+.date-table th {
+  border-top: 0px;
+}
+
+.date-table th {
+  color: #00cc70;
+}
+
+.date-table td {
+  color: #b1b1b1;
+}
+
+.container-head {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
