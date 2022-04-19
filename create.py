@@ -6,7 +6,10 @@ from datetime import datetime, date, timedelta
 import urllib.request
 import icalendar
 import recurring_ical_events
+import shutil
 
+INPUT_FOLDER='static'
+OUTPUT_FOLDER='public'
 
 FABLAB_ACTIVE=True
 K4CG_ACTIVE=True
@@ -69,16 +72,17 @@ def calcEntries():
                 dates.append(nerdbergEntry(event['dtstart'].dt.replace(tzinfo=None)))
 
     dates.sort(key=lambda entry: entry.date)
+    return dates
 
-    for dateEntry in dates:
-        yield dateEntry.asHTML()
+if __name__ == '__main__':
+    shutil.rmtree(path=OUTPUT_FOLDER, ignore_errors=True)
+    shutil.copytree(src=INPUT_FOLDER, dst=OUTPUT_FOLDER)
 
-
-if __name__ == "__main__":
-    fin = open("template.html", "r")
+    fin = open('template.html', 'r')
     data = fin.read()
-    data = data.replace('{{data}}', "".join(calcEntries()))
+    datesToShow = calcEntries()[:10]
+    data = data.replace('{{data}}', '\n'.join([date.asHTML() for date in datesToShow]))
     fin.close()
-    fin = open("index.html", "w")
+    fin = open(OUTPUT_FOLDER+'/index.html', 'w')
     fin.write(data)
     fin.close()
