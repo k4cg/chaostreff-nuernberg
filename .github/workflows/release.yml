@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - github-action-deploy
+      - master
   schedule:
     - cron: '* */1 * * *'
 jobs:
